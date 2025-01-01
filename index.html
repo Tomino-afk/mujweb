@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototyp školních stránek</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="obraz1.jpg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1>Vítejte na prototypu školních stránek</h1>
+        <hr>
+        <nav>
+            <ul class="menu">
+                <li><a href="#uvod">Úvod</a></li>
+                <li><a href="#seznam">Seznam předmětů</a></li>
+                <li><a href="#galerie">Galerie</a></li>
+                <li><a href="#akce">Školní akce</a></li>
+                <li><a href="#Dod">Den otevřených dveří</a></li>
+                <li><a href="#kde">Poloha naší školy</a></li>
+                <li><a href="#gal_florbal">Aktuální dění na škole</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="uvod">
+        <h2>Úvod</h2>
+        <p>
+            Toto je úvod mé nové stránky... <br>
+            Jsem rád, že jste moji novou stránku navštívil/a.
+            <span id="animace"> Stránka je stále ve fázi testování!</span>
+        </p>
+        
+        <p><a href="https://www.eko-g.cz/">Oficiální stránky školy</a>
+    </div>
+
+    <div id="seznam">
+        <h2>Seznam předmětů</h2>
+        <ul>
+            <li>Matematika</li>
+            <li>Čeština</li>
+            <li>Fyzika</li>
+            <li>Angličtina</li>
+            <li>Němčina</li>
+            <li>Ruština</li>
+            <li>Dějepis</li>
+            <li>Zeměpis</li>
+            <li>Biologie</li>
+            <li>Chemie</li>
+            <li>Informatika</li>
+            <li>Tělocvik</li>
+            <li>Latina</li>
+            <li>Ekologie</li>
+        </ul>
+    </div>
+
+    <div id="galerie">
+        <h2>Galerie naší školy</h2>
+        <img src="obraz1.jpg" alt="Obrázek 1">
+        <img src="obraz2.jpg" alt="Obrázek 2" class="galerie-obrazy">
+        <img src="obraz3.jpg" alt="Obrázek 2" class="galerie-obrazy">
+        <button id="tlacitko" onclick="window.location.href='https://www.facebook.com/EGBrno/?locale=cs_CZ';">
+            Více obrázků zde
+      </button>
+    </div>
+    
+    <div id="akce">
+        <h2>Školní akce</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Školní akce</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. září 2024</td>
+                    <td>Zahájení školního roku</td>
+                </tr>
+                <tr>
+                    <td>27. října 2024</td>
+                    <td>Den otevřených dveří</td>
+                </tr>
+                <tr>
+                    <td>20. prosince 2024</td>
+                    <td>Vánoční jarmanrk</td>
+                </tr>
+                <tr>
+                    <td>25. března 2025</td>
+                    <td>Školní maturity</td>
+                </tr>
+                <tr>
+                    <td>30. června 2025</td>
+                    <td>Ukončení školního roku</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+        <div id="dod">
+        <h2>Video ze dne otevřených dveří</h2>
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/117yTZytxMQ?si=MZ_AArjdARTVGEP1" 
+        title="YouTube video" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+        </iframe>
+    
+        </div>
+        <div id="kde">
+        <h2>Kde nás najdete?</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d532.7390425624124!2d16.55756122834472!3d49.17390769410489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471295005ff8287d%3A0xe20ab840a94e221b!2sEKO%20GYMN%C3%81ZIUM%20BRNO!5e0!3m2!1scs!2scz!4v1734952320798!5m2!1scs!2scz" 
+        width="600" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div id="gal_florbal" class="gallery">
+            <h2>Vánoční florbalový turnaj</h2>
+            <a href="flor1.jpg" class="lightbox">
+                <img src="flor1.jpg" alt="Obrázek 1">
+            </a>
+            <a href="flor2.jpg" class="lightbox">
+                <img src="flor2.jpg" alt="Obrázek 2">
+            </a>
+            <a href="flor3.jpg" class="lightbox">
+                <img src="flor3.jpg" alt="Obrázek 3">
+            </a>
+        </div>
+        
+        <div id="lightboxModal" class="lightbox-modal">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightboxImage" alt="Obrázek nenačten" src="placeholder.jpg">
+        </div>
+        
+        <!--  JavaScript -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Lightbox functionality
+                const lightboxLinks = document.querySelectorAll('.lightbox');
+                const lightboxModal = document.getElementById('lightboxModal');
+                const lightboxImage = document.getElementById('lightboxImage');
+                const closeBtn = document.querySelector('.close');
+                lightboxModal.style.display = 'none';
+        
+                lightboxLinks.forEach(link => {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault(); 
+                        lightboxModal.style.display = 'flex'; 
+                        lightboxImage.src = link.href; 
+                    });
+                });
+        
+                closeBtn.addEventListener('click', function() {
+                    lightboxModal.style.display = 'none'; 
+                });
+        
+                window.addEventListener('click', function(e) {
+                    if (e.target === lightboxModal) {
+                        lightboxModal.style.display = 'none'; 
+                    }
+                });
+            });
+        </script>
+        <div class="audio-container">
+            <h3>Poslechněte si krátký voiceover o naší škole</h3>
+            <audio controls>
+                <source src="voiceover.mp3" type="audio/mpeg">
+                Váš prohlížeč nepodporuje přehrávač audio.
+            </audio>
+        </div>
+    <footer>
+        <p>&copy; 2024 Prototyp školních stránek </p>
+        <hr>
+        <button id="java">Telefonická podpora</button>
+        <script>
+        document.getElementById('java').addEventListener('click', function() {
+        alert('Omlouváme se, ale všichni naši operátoři právě hovoří...');
+        });
+        </script>
+    </footer>
+
+   
+</body>
+</html>
+    
+
+
+
+
+   
